@@ -1,0 +1,6 @@
+framework module Pods_NutriQR {
+  umbrella header "Pods-NutriQR-umbrella.h"
+
+  export *
+  module * { export * }
+}
