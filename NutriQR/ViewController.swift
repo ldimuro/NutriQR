@@ -12,10 +12,13 @@ import QRCodeReader
 
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
   
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var foodLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scanButton.layer.cornerRadius = 10
         
     }
     
@@ -46,7 +49,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             //print(result!.value)
             let data = result!.value
             print(data)
-            self.label.text = data
+            self.foodLabel.text = data.uppercased()
         }
 
         // Presents the readerVC as modal form sheet
