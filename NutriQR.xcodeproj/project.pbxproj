@@ -74,10 +74,10 @@
 				84D96E45234D27490067973A /* AppDelegate.swift */,
 				84D96E47234D27490067973A /* ViewController.swift */,
 				84D96E49234D27490067973A /* Main.storyboard */,
+				84D96E57234D2A8C0067973A /* QRDisplayViewController.swift */,
 				84D96E4C234D274A0067973A /* Assets.xcassets */,
 				84D96E4E234D274A0067973A /* LaunchScreen.storyboard */,
 				84D96E51234D274A0067973A /* Info.plist */,
-				84D96E57234D2A8C0067973A /* QRDisplayViewController.swift */,
 			);
 			path = NutriQR;
 			sourceTree = "<group>";

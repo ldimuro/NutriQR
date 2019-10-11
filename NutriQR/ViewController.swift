@@ -14,11 +14,16 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
   
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var calorieLabel: UILabel!
+    @IBOutlet weak var calorieTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scanButton.layer.cornerRadius = 10
+        foodLabel.numberOfLines = 0
         
     }
     
@@ -45,11 +50,30 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
         // Or by using the closure pattern
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            //print(result)
-            //print(result!.value)
             let data = result!.value
             print(data)
-            self.foodLabel.text = data.uppercased()
+            
+            let dataArr = data.split(separator: "|")
+            
+            let foodName = dataArr[0]
+            let foodDesc = dataArr[1]
+            let price = dataArr[2]
+            let calories = dataArr[3]
+            let ingredients = dataArr[4]
+            
+//            var count = 0;
+//            for each in dataArr {
+//                count += 1
+//                print("\(count). \(each)");
+//            }
+//            self.foodLabel.lineBreakMode = .byWordWrapping
+//            self.foodLabel.numberOfLines = 0;
+            
+            self.calorieTitle.text = "Calories"
+            self.foodLabel.text = foodName.uppercased()
+            self.descriptionLabel.text = foodDesc.lowercased()
+            self.priceLabel.text = price.lowercased()
+            self.calorieLabel.text = calories.lowercased()
         }
 
         // Presents the readerVC as modal form sheet
