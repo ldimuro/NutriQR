@@ -21,6 +21,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     @IBOutlet weak var ingredientTitle: UILabel!
     @IBOutlet weak var ingredientLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,6 +72,10 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 //            self.foodLabel.lineBreakMode = .byWordWrapping
 //            self.foodLabel.numberOfLines = 0;
             
+            print(calories)
+            print(ingredients)
+            
+            
             self.calorieTitle.text = "Calories"
             self.ingredientTitle.text = "Ingredients"
             self.foodLabel.text = foodName.uppercased()
@@ -78,6 +83,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             self.priceLabel.text = price.lowercased()
             self.calorieLabel.text = calories.lowercased()
             self.ingredientLabel.text = ingredients.lowercased()
+            
         }
 
         // Presents the readerVC as modal form sheet
