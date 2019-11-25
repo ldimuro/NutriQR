@@ -19,7 +19,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var calorieTitle: UILabel!
     @IBOutlet weak var ingredientTitle: UILabel!
-    @IBOutlet weak var ingredientLabel: UILabel!
+//    @IBOutlet weak var ingredientLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -82,7 +82,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             self.descriptionLabel.text = foodDesc.lowercased()
             self.priceLabel.text = price.lowercased()
             self.calorieLabel.text = calories.lowercased()
-            self.ingredientLabel.text = ingredients.lowercased()
+//            self.ingredientLabel.text = ingredients.lowercased()
             
         }
 
