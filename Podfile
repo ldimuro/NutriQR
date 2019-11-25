@@ -7,5 +7,8 @@ target 'NutriQR' do
 
   # Pods for NutriQR
   pod 'QRCodeReader.swift', '~> 10.1.0'
+  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
 end

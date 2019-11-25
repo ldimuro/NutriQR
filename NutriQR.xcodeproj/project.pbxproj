@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84C058CE238C7C0C007AC79D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C058CD238C7C0C007AC79D /* GoogleService-Info.plist */; };
 		84D96E46234D27490067973A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D96E45234D27490067973A /* AppDelegate.swift */; };
 		84D96E48234D27490067973A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D96E47234D27490067973A /* ViewController.swift */; };
 		84D96E4B234D27490067973A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D96E49234D27490067973A /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		238576A76E9944577CCF0D9D /* Pods-NutriQR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutriQR.debug.xcconfig"; path = "Target Support Files/Pods-NutriQR/Pods-NutriQR.debug.xcconfig"; sourceTree = "<group>"; };
 		35140AC8024610E86847A253 /* Pods-NutriQR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NutriQR.release.xcconfig"; path = "Target Support Files/Pods-NutriQR/Pods-NutriQR.release.xcconfig"; sourceTree = "<group>"; };
+		84C058CD238C7C0C007AC79D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84D96E42234D27490067973A /* NutriQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D96E45234D27490067973A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D96E47234D27490067973A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		84D96E44234D27490067973A /* NutriQR */ = {
 			isa = PBXGroup;
 			children = (
+				84C058CD238C7C0C007AC79D /* GoogleService-Info.plist */,
 				84D96E45234D27490067973A /* AppDelegate.swift */,
 				84D96E47234D27490067973A /* ViewController.swift */,
 				84D96E49234D27490067973A /* Main.storyboard */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D96E50234D274A0067973A /* LaunchScreen.storyboard in Resources */,
+				84C058CE238C7C0C007AC79D /* GoogleService-Info.plist in Resources */,
 				84D96E4D234D274A0067973A /* Assets.xcassets in Resources */,
 				84D96E4B234D27490067973A /* Main.storyboard in Resources */,
 			);

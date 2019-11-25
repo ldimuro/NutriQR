@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>438904098652-9f8kautp0q0nqc3tv4lq3riagvtqkr7s.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.438904098652-9f8kautp0q0nqc3tv4lq3riagvtqkr7s</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDAGHqrXi4fQrnOq6r4tfsVknJdz2kr-QM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>438904098652</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.LouDiMuro.NutriQR</string>
+	<key>PROJECT_ID</key>
+	<string>nutriqr</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nutriqr.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:438904098652:ios:8fc8916c7a59150fbcfb99</string>
+	<key>DATABASE_URL</key>
+	<string>https://nutriqr.firebaseio.com</string>
+</dict>
+</plist>

@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import QRCodeReader
+import FirebaseDatabase
 
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
   
@@ -21,6 +22,34 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     @IBOutlet weak var ingredientTitle: UILabel!
 //    @IBOutlet weak var ingredientLabel: UILabel!
     
+    @IBOutlet weak var isVeganTitle: UILabel!
+    @IBOutlet weak var isVeganField: UILabel!
+    @IBOutlet weak var fatField: UILabel!
+    @IBOutlet weak var cholesterolField: UILabel!
+    @IBOutlet weak var sodiumField: UILabel!
+    @IBOutlet weak var fiberField: UILabel!
+    @IBOutlet weak var sugarField: UILabel!
+    @IBOutlet weak var proteinField: UILabel!
+    @IBOutlet weak var totalFatTitle: UILabel!
+    @IBOutlet weak var cholesterolTitle: UILabel!
+    @IBOutlet weak var sodiumTitle: UILabel!
+    @IBOutlet weak var fiberTitle: UILabel!
+    @IBOutlet weak var sugarTitle: UILabel!
+    @IBOutlet weak var proteinTitle: UILabel!
+    
+    
+    // VARIABLES
+    var name : String = ""
+    var price : String = ""
+    var foodDescription : String = ""
+    var calories : Int = 0
+    var cholesterol : String = ""
+    var fiber : String = ""
+    var sodium : String = ""
+    var sugar : String = ""
+    var protein : String = ""
+    var totalFat : String = ""
+    var isVegan : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,46 +79,113 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     @IBAction func scanAction(_ sender: Any) {
         // Retrieve the QRCode content by using the delegate pattern
         readerVC.delegate = self
-
+        
         // Or by using the closure pattern
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
             let data = result!.value
             print(data)
             
-            let dataArr = data.split(separator: "|")
-            
-            let foodName = dataArr[0]
-            let foodDesc = dataArr[1]
-            let price = dataArr[2]
-            let calories = dataArr[3]
-            let ingredients = dataArr[4]
-            
-//            var count = 0;
-//            for each in dataArr {
-//                count += 1
-//                print("\(count). \(each)");
-//            }
-//            self.foodLabel.lineBreakMode = .byWordWrapping
-//            self.foodLabel.numberOfLines = 0;
-            
-            print(calories)
-            print(ingredients)
-            
-            
-            self.calorieTitle.text = "Calories"
-            self.ingredientTitle.text = "Ingredients"
-            self.foodLabel.text = foodName.uppercased()
-            self.descriptionLabel.text = foodDesc.lowercased()
-            self.priceLabel.text = price.lowercased()
-            self.calorieLabel.text = calories.lowercased()
-//            self.ingredientLabel.text = ingredients.lowercased()
-            
+            self.scanDatabase(input: data)
+        
         }
 
         // Presents the readerVC as modal form sheet
         readerVC.modalPresentationStyle = .formSheet
         
         present(readerVC, animated: true, completion: nil)
+    }
+    
+    func scanDatabase(input : String) {
+        var ref: DatabaseReference!
+
+        ref = Database.database().reference().child("items").child(input)
+        
+        ref.observeSingleEvent(of: .value) { snapshot in
+            print(snapshot.childrenCount) // I got the expected number of items
+            for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                print("\(rest.key) = \(rest.value!)")
+                
+                switch rest.key {
+                case "calories":
+                    self.calories = rest.value as! Int
+                    
+                case "cholesterol":
+                    self.cholesterol = rest.value! as! String
+                    
+                case "description":
+                    self.foodDescription = rest.value! as! String
+                    
+                case "fiber":
+                    self.fiber = rest.value! as! String
+                    
+                case "isVegan":
+                    self.isVegan = rest.value! as! Int
+                    
+                case "name":
+                    self.name = rest.value! as! String
+                    
+                case "price":
+                    self.price = rest.value! as! String
+                    
+                case "protein":
+                    self.protein = rest.value! as! String
+                    
+                case "sodium":
+                    self.sodium = rest.value! as! String
+                    
+                case "sugar":
+                    self.sugar = rest.value! as! String
+                    
+                case "totalFat":
+                    self.totalFat = rest.value! as! String
+                default:
+                    print("ERROR")
+                }
+            }
+            
+            print("ALL DONE GETTING DATA")
+            
+            // ADD TITLES TO PAGE
+            self.foodLabel.isHidden = false
+            self.priceLabel.isHidden = false
+            self.descriptionLabel.isHidden = false
+            self.calorieTitle.isHidden = false
+            self.calorieLabel.isHidden = false
+            self.isVeganField.isHidden = false
+            self.isVeganTitle.isHidden = false
+            self.ingredientTitle.isHidden = false
+            self.totalFatTitle.isHidden = false
+            self.cholesterolTitle.isHidden = false
+            self.sodiumTitle.isHidden = false
+            self.fiberTitle.isHidden = false
+            self.sugarTitle.isHidden = false
+            self.proteinTitle.isHidden = false
+            self.fatField.isHidden = false
+            self.cholesterolField.isHidden = false
+            self.sodiumField.isHidden = false
+            self.fiberField.isHidden = false
+            self.sugarField.isHidden = false
+            self.proteinField.isHidden = false
+            
+            // POPULATE DATA FIELDS
+            self.foodLabel.text = self.name
+            self.priceLabel.text = self.price
+            self.descriptionLabel.text = self.foodDescription
+            self.calorieLabel.text = "\(self.calories)"
+            self.fatField.text = self.totalFat
+            self.cholesterolField.text = self.cholesterol
+            self.sodiumField.text = self.sodium
+            self.fiberField.text = self.fiber
+            self.sugarField.text = self.sugar
+            self.proteinField.text = self.protein
+
+            if(self.isVegan == 0) {
+                self.isVeganField.text = "❌"
+            }
+            else if(self.isVegan == 1) {
+                self.isVeganField.text = "✅"
+            }
+        }
     }
     
     // MARK: - QRCodeReaderViewController Delegate Methods
