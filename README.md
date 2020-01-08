@@ -16,4 +16,6 @@ I used several food items from Outback Steakhouse to serve as sample food items.
 ### Side House Salad
 <img src="/screenshots/saladScreenshot.png" alt="Salad Screenshot" title="salad screenshot" width="200" /> <img src="/screenshots/sideHouseSalad.png" alt="Salad" title="salad" width="200" height="200" />
 
+### 6 oz. Center-Cut Sirloin
+<img src="/screenshots/sirloinScreenshot.png" alt="Sirloin Screenshot" title="sirloin screenshot" width="200" /> <img src="/screenshots/sirloin.png" alt="Sirloin" title="sirloin" width="200" height="200" />
   
