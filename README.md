@@ -11,4 +11,9 @@ at restaurants. The idea would require restaurants to add QR codes to their menu
 I used several food items from Outback Steakhouse to serve as sample food items. Below are the QR codes that represent each food item, along with a screenshot of the app after the QR code has been scanned.
 
 ### 8 oz. Grilled Chicken
-![grilled chicken](screenshots/grilledChicken.png) ![grilledChickenScreenshot](screenshots/Screen Shot 2020-01-08 at 1.25.06 PM.png)
+<img src="/screenshots/chickenScreenshot.png" alt="Chicken Screenshot" title="grilled chicken screenshot" width="200" /> <img src="/screenshots/grilledChicken.png" alt="Chicken" title="grilled chicken" width="200" height="200" />
+
+### Side House Salad
+<img src="/screenshots/saladScreenshot.png" alt="Salad Screenshot" title="salad screenshot" width="200" /> <img src="/screenshots/sideHouseSalad.png" alt="Salad" title="salad" width="200" height="200" />
+
+  
