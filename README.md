@@ -1,4 +1,4 @@
-# NutriQR
+# NutriQR – iOS Application
 
 ## Main Idea
 
